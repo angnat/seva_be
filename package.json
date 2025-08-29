@@ -1,0 +1,17 @@
+{
+  "name": "sheva",
+  "version": "0.0.1",
+  "description": "Chat apps",
+  "main": "index.js",
+  "author": "digital genius",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
