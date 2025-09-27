@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
     }
 }, 
 {
-    collection : "users",
+    collection : "USER",
     timestamps : true
 });
 

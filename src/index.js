@@ -5,6 +5,7 @@ import logger from './configs/logger.config.js';
 //env variable
 const { DATABASE_URL } = process.env;
 const PORT = process.env.PORT || 8000;
+const dbName = "SEVA";
 
 //exit on mognodb error
 mongoose.connection.on("error", (err) => {
@@ -22,6 +23,7 @@ mongoose
   .connect(DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    dbName : dbName    
   })
   .then(() => {
     logger.info("Connected to Mongodb.");
