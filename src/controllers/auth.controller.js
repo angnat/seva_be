@@ -1,6 +1,7 @@
 import createHttpError from "http-errors";
 import { createUser, signUser } from "../services/auth.service.js";
 import { generateToken, verifyToken } from "../services/token.service.js";
+import { findUser } from "../services/user.service.js";
 
 export const register = async (req,res,next) => {
     try {
@@ -107,6 +108,8 @@ export const refreshToken = async (req, res, next) => {
       refresh_token,
       process.env.REFRESH_TOKEN_SECRET
     );
+    //console.log(check);
+    //res.json(check);
     const user = await findUser(check.userId);
     const access_token = await generateToken(
       { userId: user._id },
